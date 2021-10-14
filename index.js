@@ -123,7 +123,7 @@ function Update_stats(date,time,awake){
         // more info https://stackoverflow.com/questions/10804042/calculate-time-difference-with-javascript/27484203
         var dif =(( new Date("1970-1-2 " + time) - new Date("1970-1-1 " + sleep_time) ) / 1000 / 60 /60).toFixed(2);
         
-        console.log(dif);
+        //console.log(dif);
         var hour_slept=parseInt(dif);
         var minute_slept=parseInt((dif-parseInt(dif))*60);
 
@@ -132,7 +132,7 @@ function Update_stats(date,time,awake){
             minute_slept="0"+minute_slept;
         }
         var slept_time=hour_slept+":"+minute_slept
-        console.log(slept_time);
+        //console.log(slept_time);
 
         // Storing the dif and sleep_time in localstorage
         schedule[no_][2]=dif+"@"+slept_time;
@@ -202,7 +202,7 @@ function Activate_btn(){
             work_btn_show();
         }
         if(time==22 || time==23 && night){
-            console.log("I am in");
+            //console.log("I am in");
             update_btn.style.opacity="1";
             update_btn.style.pointerEvents="all";
             update_btn.innerHTML="Now Sleep<img src='Images/sleep.png' width='40' height='30'>";
@@ -249,10 +249,10 @@ function show_sleep_schedule(ele){
     var date_selected=ele.innerText;
     var schedule_date=schedule[date_selected-1];
     var sleep_stat=schedule_date[2].split("@");
-    console.log(sleep_stat);
+    //console.log(sleep_stat);
     var total_sleep=sleep_stat[1];
     var sleep_health=sleep_stat[0];
-    console.log(`I slept ${schedule[date_selected-1][1]} on date ${date_selected}`);
+    //console.log(`I slept ${schedule[date_selected-1][1]} on date ${date_selected}`);
     // Selecting the doiv to shoe the sleep hour of particular date
     var sleep_stat_show=document.getElementById("sleep_hour");
     sleep_stat_show.innerHTML=`        
@@ -281,8 +281,8 @@ function highlight_date_bg(schedule) {
             date_.style.background="rgba(0, 0, 0, 0.026)";
         }
         else{
-            console.log(j);
-            console.log(typeof(total_sleep));
+            //console.log(j);
+            //console.log(typeof(total_sleep));
             if (6>total_sleep>=5) {
                 date_.style.background="greenyellow";
             };
@@ -353,7 +353,7 @@ function set_month() {
 function close_(stat_id,blur) {
     var stat_container=document.getElementById(stat_id);
     var blur_bg=document.getElementById(blur);
-    console.log(stat_container);
+    //console.log(stat_container);
 
     // Display none
     stat_container.style.display="none";
@@ -363,7 +363,7 @@ function close_(stat_id,blur) {
 function show_stat(stat_id,blur) {
     var stat_container=document.getElementById(stat_id);
     var blur_bg=document.getElementById(blur);
-    console.log(stat_container);
+    //console.log(stat_container);
 
     // Display none
     stat_container.style.display="inline-block";
