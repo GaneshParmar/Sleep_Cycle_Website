@@ -192,7 +192,7 @@ function Activate_btn(){
         if(time==5 || time==6|| time==7 && morning){
             update_btn.style.opacity="1";
             update_btn.style.pointerEvents="all";
-            update_btn.innerHTML="I Woke Up<img src='/Images/woke_up.png' width='40' height='30'>";
+            update_btn.innerHTML="I Woke Up<img src='Images/woke_up.png' width='40' height='30'>";
             update_btn.addEventListener('click',function () {
                 Update_stats(today_date,current_hrn_min_time,true);
                 work_btn_show();
@@ -205,7 +205,7 @@ function Activate_btn(){
             console.log("I am in");
             update_btn.style.opacity="1";
             update_btn.style.pointerEvents="all";
-            update_btn.innerHTML="Now Sleep<img src='//Images/sleep.png' width='40' height='30'>";
+            update_btn.innerHTML="Now Sleep<img src='Images/sleep.png' width='40' height='30'>";
             update_btn.addEventListener('click',function () {
                 Update_stats(today_date,current_hrn_min_time,false);
                 work_btn_show(true);
