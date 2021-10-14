@@ -205,7 +205,7 @@ function Activate_btn(){
             console.log("I am in");
             update_btn.style.opacity="1";
             update_btn.style.pointerEvents="all";
-            update_btn.innerHTML="Now Sleep<img src='/Images/sleep.png' width='40' height='30'>";
+            update_btn.innerHTML="Now Sleep<img src='//Images/sleep.png' width='40' height='30'>";
             update_btn.addEventListener('click',function () {
                 Update_stats(today_date,current_hrn_min_time,false);
                 work_btn_show(true);
