@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add_Good_Habits</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+    <div id="desktop">
+        <h1>Currently not avilable for Pc</h1><br>
+    </div>
+    <!-- <div class="header">
+    </div> -->
+    <div id="container">
+
+        <div class="nav_container_item">
+            <div class="nav_item"><input type="radio" name="select" id="nav_select_1"  class="input_nav" value="curr_habits" checked/><label onclick="select_nav(0)" for="nav_select_1"><span>Goal</span></label></div>
+            <!-- <div class="nav_item"><input type="radio" name="select" id="nav_select_2"  class="input_nav" value="add_habit" checked/><label onclick="select_nav(1)" for="nav_select_2"><span>Add_Habits</span></label></div> -->
+            <div class="nav_item"><input type="radio" name="select" id="nav_select_3"  class="input_nav" value="feat" /><label onclick="select_nav(1)" for="nav_select_3"><span>Achievements</span></label></div>
+        </div>
+
+        <div class="Cur_habits active" id="container_item">
+            <!-- Here is cureent habits -->
+            <!-- Habit for daily waking up early -->
+            <div class="habit_container">
+                <h5>Sleep Schedule <p class="goal hide_sm">(7 days challange atleat 4 days)</p></h5>
+                <hr> 
+                <p class="hide_sm">21 days challange to wake up Early.This I Woke Up button will be available between 5:00 Am to 5:30 Am.....</p>
+                
+                <!-- For small screen -->
+                <div class="details hide" id="details_sm">
+                    <p class="goal">(7 days challange atleat 4 days)</p>
+                    <p>Sleep Schedule It will check the sleep schedule.At Night when you sleep click the button I slept Now And when you wake up click the button I woke up.Click On <u><b>SEE STATS</u></b> to check the sleep schedule.When you sleep and when you wake up.</p>
+                    <div class="track_btn" id="stats_btn" onclick="show_stat('status','blurry_bg')"><img src="./Images/glass.png" width="40" height="20">SeeStats</div>
+                </div>
+                <!--  -->
+
+                <div class="btn_box">
+                    <div class="track_btn hide show_btn" onclick="show_details(this)">View Details</div>
+                    <div class="track_btn hide_sm"  onclick="show_stat('status','blurry_bg')"><img src="./Images/glass.png" width="40" height="20"/>SeeStats</div>
+                    <div class="track_btn update" id="update" ></div>
+                </div>
+            </div>
+            <div id="status">
+                <div class="month" id="month_name"></div>
+                <div class="close" onclick="close_('status','blurry_bg')">X</div>
+                <div class="month_days" id="month_container">
+                    <div class="month_items days">Sun</div>
+                    <div class="month_items days">Mon</div>
+                    <div class="month_items days">Tue</div>
+                    <div class="month_items days">Wed</div>
+                    <div class="month_items days">Thus</div>
+                    <div class="month_items days">Fri</div>
+                    <div class="month_items days">Sat</div>
+                    <!-- Dynamically generate -->
+                </div>
+                <div id="sleep_hour">
+                    <!-- <h5>My Sleep Schedule On Date <span class="date">23/10/2021</span></h5>
+                    <p>Waking Time <span class="special">05:00</span></p>
+                    <p>Sleeping Time <span class="special">23:58</span></p>
+                    <h3>Total Sleep 5:00</h3>
+                    <p>Sleep Heath 5 (6 is ok!)</p> -->
+                </div>
+        </div>
+        <!-- <div class="Add_habit active" id="container_item">
+            <div class="add" onclick="show_form('#habit_form')">
+                Add Habits To do
+            </div>
+            <form id="habit_form">
+                <label for="habit">Habit_Name</label>
+                <input type="text" name="habit">
+                <div class="btn_box">
+                    <div class="add_btn btn" >AddHabit</div>
+                    <div class="cancel_btn btn" onclick="hide_form('#habit_form')">Cancel</div>
+                </div>
+            </form>
+        </div> -->
+        <div class="Feat" id="container_item">
+            Here Acheivements are shown
+        </div>
+        <div id="blurry_bg">
+        </div>
+    </div>
+    <!-- <div class="local_clear" onclick="clear_local()">Clear_LocalStorage</div> -->
+    <div id="show_update">Record Updated!</div>
+</body>
+<script src="index.js"></script>
+</html>
