@@ -284,7 +284,7 @@ function highlight_date_bg(schedule) {
             //console.log(j);
             //console.log(typeof(total_sleep));
             if (6>total_sleep>=5) {
-                date_.style.background="greenyellow";
+                date_.style.background="#fcd403";
             };
             if(7>total_sleep || total_sleep>=6){
                 date_.style.background="#03fe86";
