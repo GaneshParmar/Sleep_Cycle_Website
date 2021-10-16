@@ -21,7 +21,7 @@
             <div class="nav_item"><input type="radio" name="select" id="nav_select_3"  class="input_nav" value="feat" /><label onclick="select_nav(1)" for="nav_select_3"><span>Achievements</span></label></div>
         </div>
 
-        <div class="Cur_habits active" id="container_item">
+        <div class="Cur_habits active container_item" id="container_item">
             <!-- Here is cureent habits -->
             <!-- Habit for daily waking up early -->
             <div class="habit_container">
@@ -34,6 +34,7 @@
                     <p class="goal">(7 days challange atleat 4 days)</p>
                     <p>Sleep Schedule It will check the sleep schedule.At Night when you sleep click the button I slept Now And when you wake up click the button I woke up.Click On <u><b>SEE STATS</u></b> to check the sleep schedule.When you sleep and when you wake up.</p>
                     <div class="track_btn" id="stats_btn" onclick="show_stat('status','blurry_bg')"><img src="./Images/glass.png" width="40" height="20">SeeStats</div>
+                    <div class="track_btn" id="stats_btn" onclick="show_stat('l_month_stat','blurry_bg')">Last Month Stats</div>
                 </div>
                 <!--  -->
 
@@ -64,6 +65,19 @@
                     <p>Sleep Heath 5 (6 is ok!)</p> -->
                 </div>
         </div>
+
+        <!-- Last Month Status -->
+        <div id="l_month_stat">
+            <!-- <div class="month" id="month_name">September</div>
+            <div class="close" onclick="close_('l_month_stat','blurry_bg')">X</div>
+            <div class="l_month_info">
+                <h4>Average Sleep <span id="l_month_avg_slp">06:00</span></h4>
+                <h5>Lowest Sleep <span id="l_month_l_slp">05:00</span></h5>
+                <h5>Highest Sleep <span id="l_month_h_slp">08:00</span></h5>
+            </div>
+            <footer>you see <i>last month states</i></footer> -->
+        </div>
+
         <!-- <div class="Add_habit active" id="container_item">
             <div class="add" onclick="show_form('#habit_form')">
                 Add Habits To do
@@ -77,13 +91,14 @@
                 </div>
             </form>
         </div> -->
-        <div class="Feat" id="container_item">
-            Here Acheivements are shown
-        </div>
         <div id="blurry_bg">
         </div>
+        
     </div>
-    <!-- <div class="local_clear" onclick="clear_local()">Clear_LocalStorage</div> -->
+    <div class="Feat container_item" id="container_item">
+        Here Acheivements are shown
+    </div>
+    <div class="local_clear" onclick="clear_local()">Clear_LocalStorage</div>
     <div id="show_update">Record Updated!</div>
 </body>
 <script src="index.js"></script>
