@@ -17,6 +17,9 @@
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
+a{
+    text-decoration: none;
+}
 /* Margin special class */
 .mt{
     margin-top: 0.5vh;
@@ -24,16 +27,24 @@
 .mb{
     margin-bottom: 0.5vh;
 }
-
+.ml{
+    margin-left: 0.5vw;
+}
+.mr{
+    margin-right: 0.5vh;
+}
+.m{
+    margin: 0.5vw;
+}
 
 #desktop{
     position: absolute;
+    z-index: 100;
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
     background: white;
 }
 .hide{
@@ -177,7 +188,7 @@ label{
     position: relative;
 }
 
-.habit_container>.btn_box>.track_btn,#stats_btn{
+.habit_container>.btn_box>.track_btn,#stats_btn,#show_history{
     background-size: contain;
     padding: 10px 10px;
     border: 1px solid black;
@@ -529,6 +540,150 @@ label{
     padding: 10px;
     z-index: 2;
 }
+
+/* Money Habit section */
+.money_h{
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Vc8YxayH6D_fciI01oQut1xsCfBy5EAgmA&usqp=CAU) no-repeat!important;
+    background-size:contain;
+}
+.money_h>p,.money_h>h3{
+    display: flex;
+    color: #ff412f;
+    z-index: 1;
+    font-size: 1.2em;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Roboto Slab', serif;
+    height: 7vh;
+}
+.money_h>h3{
+    position: relative;
+    display: flex;
+    /* background-color: #1babdb; */
+    width: 20vh;
+    margin-left: 40vw;
+    color: rgba(128, 128, 128, 0.788);
+    font-size: 1.3em;
+}
+.money_h>h3>#money_amt{
+    position: absolute;
+    top: -5px;
+    color: blueviolet;
+    box-sizing: content-box;
+    padding: 2px;
+    font-size: 1.3em;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Noto Sans Display', sans-serif;
+    animation: size_chng 0.8s forwards infinite ease-in-out;    
+}
+.hidden_data{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1;
+}
+#show_history{
+    margin: 0 !important;
+    z-index: 1;
+    width: fit-content;
+    font-size: 1.2em;
+    padding: 15px 10px;
+    font-family: 'Nunito', sans-serif;
+    box-shadow: none;
+}
+.btn{
+    background-color: #03fe86;
+    width: 60px;
+    font-size: 2em;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    /* font-family: 'Quicksand', sans-serif; */
+    font-family: 'Roboto Slab', serif;
+    padding: 7px;
+    border-radius: 10px;
+}
+.btn:nth-last-child(1){
+    background-color: #ff512f;
+}
+
+
+/* Form for updating the transaction */
+.update_transaction{
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: #f2cc00;
+    color: white;
+}
+.update_transaction>form{
+    display: flex;
+    /* justify-content: center; */
+    align-items:center;
+    padding: 10px;
+    flex-direction: column;
+    background-color: #3864ab;
+    width: 90%;
+    height: 400px;
+}
+input{
+    color: white;
+}
+/* .update_transaction>form>input,.update_transaction>form>div>input{
+    margin: 10px;
+} */
+/* .update_transaction>form>div:nth-child(1){
+    display: block;
+} */
+.update_transaction>form>div>label{
+    position: relative;
+    /* display: block; */
+    width: 100%;
+    /* left: -50%; */
+    text-align: left;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Noto Sans Display', sans-serif;
+}
+.update_transaction>form>div>input[type="text"],.update_transaction>form>div>input[type="number"]{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: red;
+    height: 40px;
+     }
+.container{
+    display: flex;
+    position: relative;
+    top: 20vh;
+}     
+.submit_btn,.cancel_btn{
+    width: fit-content;
+    height: fit-content;
+    color: rgba(0, 0, 0, 0.863);
+    background-color: white;
+    position: relative;
+    /* bottom: 30vh; */
+    padding: 20px 40px;
+    border-radius: 30px;
+    margin: 10px;
+}
+.submit_btn{
+    /* left: 10vw; */
+    color: #1babdb;
+}
+.cancel_btn{
+    /* right: 10vw; */
+    background-color: #ff612f;
+    color: white;
+}     
+/*    .update_transaction>form>div{
+        display: flex;
+    } */
+
 /* For mobile phones */
 @media (max-width:600px) {
 
@@ -655,22 +810,6 @@ label{
     }
 }
 
-/* Animatrion for form sliding */
-@keyframes slide {
-    0%{
-        transform: translateX(-300%);
-    }
-    90%{
-        transform: translateX(10%);
-        transform: rotateZ(2deg);
-    }
-    100%{
-        transform: translateX(0%);
-        transform: rotateZ(0deg);
-    }
-}
-
-
 /* Animation for showing updated */
 @keyframes hide {
     0%{
@@ -678,5 +817,15 @@ label{
     }
     100%{
         opacity: 0;
+    }
+}
+
+/* Animation for showing size of text changing*/
+@keyframes size_chng {
+    0%{
+        font-size: 1.2em;
+    }
+    100%{
+        font-size: 1.22em;
     }
 }

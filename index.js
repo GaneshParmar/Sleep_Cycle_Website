@@ -475,6 +475,57 @@ function last_month_status_update(l_month) {
         <footer>you see <i>last month states</i></footer>
     `;
 }
+// Function to show the update transaction 
+function show_form(ele){
+    document.getElementsByClassName(ele)[0].style.display="flex";
+}
+function hide_form(ele) {
+    document.getElementsByClassName(ele)[0].style.display="none";
+}
+
+// Add transaction and update localstorage
+function update_transaction_localstorage() {
+    var balance_show=document.getElementById("money_amt");    
+    var balance_amt=balance_show.innerHTML;
+    var date= new Date().toLocaleDateString();
+    var amount=document.getElementById("amount").value;
+    var details=document.getElementById("detail").value;
+    var balance_=parseInt(balance_amt.split(" ")[0])+parseInt(amount);
+    console.log(amount);
+    console.log(details);
+    if (localStorage.getItem("Transaction")==null) {   
+        // console.log(temp);
+        localStorage.setItem("Transaction",JSON.stringify(transaction_list));
+    }
+    if (localStorage.getItem("Balance")==null) {   
+        // console.log(temp);
+        localStorage.setItem("Balance",balance_amt);
+    }
+    var transaction_record=JSON.parse(localStorage.getItem("Transaction"));
+    var update_transaction={
+        "date":`${date}`,
+        "detail":`${details}`,
+        "amount":`${amount}Rs`
+    }
+    if(amount!=null && details!=null){
+        transaction_record.push(update_transaction);
+        balance_show.innerHTML=`${balance_} Rs`;
+        // var balance_amt=balance_show.innerHTML;
+        localStorage.setItem("Balance",`${balance_} Rs`);
+    }
+    // show_transaction();
+    localStorage.setItem("Transaction",JSON.stringify(transaction_record));
+}
+
+// update balance
+function update_balance() {
+    var balance_show=document.getElementById("money_amt"); 
+    if (localStorage.getItem("Balance")==null) {   
+        // console.log(temp);
+        localStorage.setItem("Balance","0 Rs");
+    }
+    balance_show.innerHTML=localStorage.getItem("Balance");
+}
 
 
 // Calling the function
@@ -498,5 +549,5 @@ show_sleep_schedule(active_date_ele);
 
 last_month_status_update(month-1);
 
-
+update_balance();
 // Update_stats(14,"22:00",false);

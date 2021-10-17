@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display&family=Nunito&family=Quicksand:wght@300&family=Roboto+Slab:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    text-align: center;
+    padding: 10px 0;
+    background-color: black;
+    color: blanchedalmond;
+    /* font-family: 'Noto Sans Display', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Quicksand', sans-serif; */
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.4em;
+}
+
+
+/* Style for history specific date */
+.transaction_container{
+    padding: 0 4px;
+}
+.particular_date{
+    display: flex;
+    flex-direction: column;
+   
+}
+.particular_date>h4{
+    padding: 10px;
+    color: rgba(41, 41, 41, 0.308);
+}
+.particular_date>.money_info{
+    display: flex;
+    flex-direction: column;
+   
+    /* justify-content: space-between; */
+    /* padding: 10px 20px; */
+}
+.particular_date>.money_info>.info{
+    position: relative;
+    background-color: #ff522fb2;
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    margin-bottom: 1px;
+    padding: 10px;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 800;
+}
+.particular_date>.money_info>.info.green{
+    background-color: rgba(20, 201, 20, 0.582);
+}
+footer{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid gray;
+    padding: 10px 10px;
+    font-family: 'Baloo Bhai 2', cursive;
+    font-size: 1.2em;
+}

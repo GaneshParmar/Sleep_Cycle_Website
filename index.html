@@ -67,39 +67,40 @@
         </div>
 
         <!-- Last Month Status -->
-        <div id="l_month_stat">
-            <!-- <div class="month" id="month_name">September</div>
-            <div class="close" onclick="close_('l_month_stat','blurry_bg')">X</div>
-            <div class="l_month_info">
-                <h4>Average Sleep <span id="l_month_avg_slp">06:00</span></h4>
-                <h5>Lowest Sleep <span id="l_month_l_slp">05:00</span></h5>
-                <h5>Highest Sleep <span id="l_month_h_slp">08:00</span></h5>
-            </div>
-            <footer>you see <i>last month states</i></footer> -->
-        </div>
+        <div id="l_month_stat"></div>
+        <!--Blurry window  -->
+        <div id="blurry_bg"></div>
 
-        <!-- <div class="Add_habit active" id="container_item">
-            <div class="add" onclick="show_form('#habit_form')">
-                Add Habits To do
-            </div>
-            <form id="habit_form">
-                <label for="habit">Habit_Name</label>
-                <input type="text" name="habit">
-                <div class="btn_box">
-                    <div class="add_btn btn" >AddHabit</div>
-                    <div class="cancel_btn btn" onclick="hide_form('#habit_form')">Cancel</div>
-                </div>
-            </form>
-        </div> -->
-        <div id="blurry_bg">
+        <!-- Money Save -->
+        <div class="habit_container money_h">
+            <h5>Save <img src="./Images/wallet.png" class="m" alt="$" height="25px" > Money <p class="goal hide_sm">(Save Money It really helps)</p></h5>
+            <p>So Far Saved </p>
+            <h3><span id="money_amt">0 Rs</span></h3>
+            <div class="hidden_data">
+                <a href="./transaction.html"> <div class="track_btn" id="show_history">Transaction <img src="./Images/transa_img.png" alt="" srcset="" width="25px"></div></a>
+                <div class="track_btn btn" id="add_money" onclick="show_form('update_transaction')">+</div>
+                <div class="track_btn btn" id="money_spent" onclick="show_form('update_transaction')">-</div>
+            </div>            
         </div>
-        
     </div>
+    <div class="update_transaction">
+        <form action="">
+            <!-- <div class="input"><label for="detail">Date </label><input type="datetime-local" name="date" id="date"></div> -->
+            <div class="input"><label for="detail">Enter Where Monry Spent/Got </label><input type="text" name="detail" id="detail"></div><br><br>
+            <div class="input"> <label for="amount">Amount</label><input type="number" name="amount" id="amount"></div>
+            <div class="container">
+                <div class="submit_btn" onclick="update_transaction_localstorage()">Submit</div>
+                <div class="cancel_btn" onclick="hide_form('update_transaction')" >Cancel</div>
+            </div>
+        </form>
+    </div>
+    <!--  -->
     <div class="Feat container_item" id="container_item">
         Here Acheivements are shown
     </div>
-<!--     <div class="local_clear" onclick="clear_local()">Clear_LocalStorage</div> -->
+    <!-- <div class="local_clear" onclick="clear_local()">Clear_LocalStorage</div> -->
     <div id="show_update">Record Updated!</div>
 </body>
 <script src="index.js"></script>
+<!-- <script src="transaction.js"></script> -->
 </html>
