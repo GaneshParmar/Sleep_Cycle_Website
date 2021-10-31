@@ -116,12 +116,14 @@ function Average_Sleep(schedule,num) {
 }
 var l_slp_time=10;
 var h_slp_time=5;
-function get_l_h_slp_time(t_sleep_time,num) {
+function get_l_h_slp_time(t_sleep_time,num) {    
     if(h_slp_time<t_sleep_time){
         h_slp_time=t_sleep_time;
     }
     if(l_slp_time>t_sleep_time){
-        l_slp_time=t_sleep_time
+        if(t_sleep_time > 1){
+            l_slp_time=t_sleep_time;
+        }        
     }
     return {"l":l_slp_time,"h":h_slp_time};
 }
