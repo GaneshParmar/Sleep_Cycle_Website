@@ -37,7 +37,7 @@ if(localStorage.getItem("last_month_sleep_status")==null){
     // Inserting the empty value in local storage
     localStorage.setItem("last_month_sleep_status",JSON.stringify(sleep_stat_lMonth));
 }
-var last_month_sleep_status=JSON.parse(localStorage.getItem("last_month_sleep_status"));
+var last_month_sleep_status=JSON.parse(localStorage.getItem("local_month_sleep_status"));
 // if date is equal to 1
 function localstorage_update() {
     // Coping the lat date sleep time
@@ -422,7 +422,7 @@ function set_month() {
         last_month_sleep_status["L_Sleep"]=last_month_avg_l_h["2"];
         last_month_sleep_status["H_Sleep"]=last_month_avg_l_h["3"];
         // console.log(last_month_sleep_status);
-        localStorage.setItem("local_month_sleep_status",JSON.stringify(last_month_sleep_status));
+        localStorage.setItem("last_month_sleep_status",JSON.stringify(last_month_sleep_status));
         // location.reload();
     }
 
@@ -476,6 +476,9 @@ function last_month_status_update(l_month) {
         </div>
         <footer>you see <i>last month states</i></footer>
     `;
+//         One time
+        localStorage.setItem("last_month_sleep_status",JSON.stringify(last_month_sleep_status));
+        
 }
 // Function to show the update transaction 
 function show_form(ele){
