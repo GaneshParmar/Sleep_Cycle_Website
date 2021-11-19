@@ -78,12 +78,12 @@
             <h3><span id="money_amt">0 Rs</span></h3>
             <div class="hidden_data">
                 <a href="./transaction.html"> <div class="track_btn" id="show_history">Transaction <img src="./Images/transa_img.png" alt="" srcset="" width="25px"></div></a>
-                <div class="track_btn btn" id="add_money" onclick="show_form('update_transaction',true)">+</div>
-                <div class="track_btn btn" id="money_spent" onclick="show_form('update_transaction',false)">-</div>
+                <div class="track_btn btn" id="add_money" onclick="show_form('update_transaction',true,'add')">+</div>
+                <div class="track_btn btn" id="money_spent" onclick="show_form('update_transaction',false,'sub')">-</div>
             </div>            
         </div>
     </div>
-    <div class="update_transaction">
+    <div class="update_transaction ">
         <form action="">
             <!-- <div class="input"><label for="detail">Date </label><input type="datetime-local" name="date" id="date"></div> -->
             <div class="input"><label for="detail">Enter Where Monry Spent/Got </label><input type="text" name="detail" id="detail"></div><br><br>

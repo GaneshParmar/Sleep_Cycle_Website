@@ -620,6 +620,12 @@ label{
     background-color: #f2cc00;
     color: white;
 }
+.add{
+    background-color: #03fe86;
+}
+.sub{
+    background-color: #ff412f;
+}
 .update_transaction>form{
     display: flex;
     /* justify-content: center; */
@@ -652,7 +658,7 @@ input{
     border: none;
     outline: none;
     border-radius: 10px;
-    background-color: red;
+    background-color: white;
     height: 40px;
      }
 .container{
