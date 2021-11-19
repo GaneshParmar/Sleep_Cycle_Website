@@ -477,8 +477,10 @@ function last_month_status_update(l_month) {
     `;
 }
 // Function to show the update transaction 
-function show_form(ele,stat,bg){
-    
+function show_form(ele,stat,bg,h,s){
+    document.getElementById(h).classlist.add('hide');
+    document.getElementById(s).classlist.remove('hide')
+
     form_=document.getElementsByClassName(ele)[0];
     form_.className=ele;
     sum=stat;
