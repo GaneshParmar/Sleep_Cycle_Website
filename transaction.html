@@ -10,6 +10,18 @@
 </head>
 <body>
     <header>Transaction</header>
+    <button class="btn" onclick="cl_tran_show_conf()">Clear Transaction</button>
+    <div class="confirm hide" id="confirm">
+        <div class="box">
+            <h4>
+                Are you sure to clear Transaction?
+            </h4>
+            <div class="btn_wrap">
+                <button class="btn yes_btn" onclick="clear_tran()">Yes</button>
+                <button class="btn no_btn" onclick="hide_confirm()">No</button>
+            </div>
+        </div>
+    </div>
     <div class="transaction_container" id="transaction_container">
         <!-- <div class="particular_date">
             <h4>12 October 2021</h4>
@@ -27,8 +39,8 @@
                     <div class="amt">+30Rs.</div>
                 </div>
             </div></div> -->
+        </div>
         <footer><p>Total Balance</p> <strong id="balance">630Rs.</strong></footer>
-    </div>
 </body>
 <script src="transaction.js"></script>
 </html>

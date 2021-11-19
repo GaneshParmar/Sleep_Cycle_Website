@@ -2,6 +2,7 @@
 var win_width=innerWidth;
 var last_month_sleep="";
 var average_sleep=0;
+var sum=false;
 // If local storage is not created
         
 if(localStorage.getItem("sleep_status")==null){
@@ -37,7 +38,7 @@ if(localStorage.getItem("last_month_sleep_status")==null){
     // Inserting the empty value in local storage
     localStorage.setItem("last_month_sleep_status",JSON.stringify(sleep_stat_lMonth));
 }
-var last_month_sleep_status=JSON.parse(localStorage.getItem("local_month_sleep_status"));
+var last_month_sleep_status=JSON.parse(localStorage.getItem("last_month_sleep_status"));
 // if date is equal to 1
 function localstorage_update() {
     // Coping the lat date sleep time
@@ -116,14 +117,12 @@ function Average_Sleep(schedule,num) {
 }
 var l_slp_time=10;
 var h_slp_time=5;
-function get_l_h_slp_time(t_sleep_time,num) {    
+function get_l_h_slp_time(t_sleep_time,num) {
     if(h_slp_time<t_sleep_time){
         h_slp_time=t_sleep_time;
     }
     if(l_slp_time>t_sleep_time){
-        if(t_sleep_time > 1){
-            l_slp_time=t_sleep_time;
-        }        
+        l_slp_time=t_sleep_time
     }
     return {"l":l_slp_time,"h":h_slp_time};
 }
@@ -349,10 +348,10 @@ function highlight_date_bg(schedule) {
         else{
             // console.log(j);
             // console.log(typeof(total_sleep));
-            if (total_sleep==5) {
+            if (6>total_sleep>=5) {
                 date_.style.background="#fcd403";
             };
-            if(total_sleep==6){
+            if(7>total_sleep || total_sleep>=6){
                 date_.style.background="#03fe86";
             }
             if(total_sleep>=7){
@@ -422,7 +421,7 @@ function set_month() {
         last_month_sleep_status["L_Sleep"]=last_month_avg_l_h["2"];
         last_month_sleep_status["H_Sleep"]=last_month_avg_l_h["3"];
         // console.log(last_month_sleep_status);
-        localStorage.setItem("last_month_sleep_status",JSON.stringify(last_month_sleep_status));
+        localStorage.setItem("local_month_sleep_status",JSON.stringify(last_month_sleep_status));
         // location.reload();
     }
 
@@ -476,12 +475,10 @@ function last_month_status_update(l_month) {
         </div>
         <footer>you see <i>last month states</i></footer>
     `;
-//         One time
-        localStorage.setItem("last_month_sleep_status",JSON.stringify(last_month_sleep_status));
-        
 }
 // Function to show the update transaction 
-function show_form(ele){
+function show_form(ele,stat){
+    sum=stat;
     document.getElementsByClassName(ele)[0].style.display="flex";
 }
 function hide_form(ele) {
@@ -495,9 +492,17 @@ function update_transaction_localstorage() {
     var date= new Date().toLocaleDateString();
     var amount=document.getElementById("amount").value;
     var details=document.getElementById("detail").value;
-    var balance_=parseInt(balance_amt.split(" ")[0])+parseInt(amount);
-    console.log(amount);
-    console.log(details);
+    if (sum) {
+        var balance_=parseInt(balance_amt.split(" ")[0])+parseInt(amount);
+    }
+    else{
+        amount=amount*-1;
+        console.log(amount);
+        var balance_=parseInt(balance_amt.split(" ")[0])+parseInt(amount);
+
+    }
+    // console.log(amount);
+    // console.log(details);
     if (localStorage.getItem("Transaction")==null) {   
         // console.log(temp);
         localStorage.setItem("Transaction",JSON.stringify(transaction_list));
@@ -520,6 +525,7 @@ function update_transaction_localstorage() {
     }
     // show_transaction();
     localStorage.setItem("Transaction",JSON.stringify(transaction_record));
+    hide_form('update_transaction');
 }
 
 // update balance

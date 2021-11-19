@@ -6,6 +6,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+.hide{
+    display: none !important;
+}
 header{
     text-align: center;
     padding: 10px 0;
@@ -19,6 +22,63 @@ header{
 }
 
 
+/* Style for clear btn */
+.btn{
+    padding: 15px 1%;
+    width: 50%;
+    border-radius: 30px;
+    margin: 10px 25%;
+    text-align: center;
+    background-color: #ff512f;
+    color: white;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.644);
+}
+.btn:active{
+    box-shadow: none;
+}
+/* Style for confirmation message */
+.confirm{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    width: 80vw;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.288);
+    box-shadow: 0px 0px 10px rgb(184, 184, 184);
+    padding: 20px;
+    z-index: 10;
+}
+.confirm>.box{
+    width: 80%;
+}
+.confirm>.box>h4{
+    text-align: center;
+    color: gray;
+}
+.btn_wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn_wrap>.btn{
+    width: 45%;
+    padding : 10px 0;
+    margin: 20px 10px;
+}
+.no_btn{
+    background-color: green;
+}
+/*  */
+/*  */
 /* Style for history specific date */
 .transaction_container{
     padding: 0 4px;
