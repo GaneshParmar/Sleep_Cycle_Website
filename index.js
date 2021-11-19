@@ -478,7 +478,9 @@ function last_month_status_update(l_month) {
 }
 // Function to show the update transaction 
 function show_form(ele,stat,bg){
-    form_=document.getElementsByClassName(ele)[0]
+    
+    form_=document.getElementsByClassName(ele)[0];
+    form_.className=ele;
     sum=stat;
     form_.style.display="flex";
     form_.classList.add(bg);
