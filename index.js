@@ -479,10 +479,13 @@ function last_month_status_update(l_month) {
 // Function to show the update transaction 
 function show_form(ele,stat,bg,h,s){
      var show_f=document.getElementById(s);
-    document.getElementById(h).classlist.add('hide');
-    if(show_f.classlist.contains('hide')){
-show_f.classlist.remove('hide');
-}
+     console.log(show_f);
+    var hide_f= document.getElementById(h);
+    hide_f.classList.add('hide');
+    console.log(hide_f);
+    if(show_f.classList.contains('hide')){
+        show_f.classList.remove('hide');
+    }
     form_=document.getElementsByClassName(ele)[0];
     form_.className=ele;
     sum=stat;

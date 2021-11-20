@@ -618,9 +618,9 @@ label{
     top: 0;
     z-index: 10;
     width: 100%;
-    height: 100%;
-    background-color: #f2cc00;
+    height: 100vh;
     color: white;
+    overflow: hidden;
 }
 .add{
     background-color: #03fe86;
@@ -636,10 +636,11 @@ label{
     flex-direction: column;
     background-color: #3864ab;
     width: 90%;
-    height: 400px;
+    height: 450px;
 }
 input{
-    color: white;
+    color: black;
+    /* font-family: '' !important; */
 }
 /* .update_transaction>form>input,.update_transaction>form>div>input{
     margin: 10px;
@@ -647,12 +648,21 @@ input{
 /* .update_transaction>form>div:nth-child(1){
     display: block;
 } */
+.input{
+    width: 100%;
+}
+.input>label{
+    /* display: flex; */
+    justify-content: left;
+    width: 100%;
+    text-align: left;
+}
 .update_transaction>form>div>label{
     position: relative;
     /* display: block; */
     width: 100%;
     /* left: -50%; */
-    text-align: left;
+    /* text-align: left; */
     font-family: 'Nunito', sans-serif;
     font-family: 'Noto Sans Display', sans-serif;
 }
@@ -662,7 +672,10 @@ input{
     border-radius: 10px;
     background-color: white;
     height: 40px;
-     }
+    margin-left: 50%;
+    transform: translateX(-50%);
+    /* margin: 0 auto; */
+    }
 .container{
     display: flex;
     position: relative;
