@@ -480,7 +480,7 @@ function last_month_status_update(l_month) {
 function show_form(ele,stat,bg,h,s){
      var show_f=document.getElementById(s);
     document.getElementById(h).classlist.add('hide');
-    if(show_f.classlist.contains('hide'){
+    if(show_f.classlist.contains('hide')){
 show_f.classlist.remove('hide');
 }
     form_=document.getElementsByClassName(ele)[0];
